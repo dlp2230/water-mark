@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.backend.mapper.CookieConfigMapper">
+    <resultMap id="rm" type="com.backend.model.CookieConfig">
+        <result property="id" jdbcType="INTEGER" column="id"/>
+        <result property="platform" jdbcType="INTEGER" column="platform"/>
+        <result property="cookie" jdbcType="VARCHAR" column="cookie"/>
+        <result property="createTime" jdbcType="TIMESTAMP" column="create_time"/>
+        <result property="updateTime" jdbcType="TIMESTAMP" column="update_time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,
+        platform,
+		cookie,
+		create_time,
+		update_time
+    </sql>
+
+    <select id="selectApis" parameterType="com.backend.vo.CookieConfigVo" resultMap="rm" >
+        select *
+        FROM
+        pb_cookie_config
+        WHERE 1=1
+        ORDER BY id ASC
+    </select>
+
+    <delete id="deleteBatch" parameterType="map">
+        DELETE FROM
+        pb_cookie_config
+        where
+        id in
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="selectByPlatformInfo" parameterType="int" resultMap="rm">
+        select *
+        from pb_cookie_config
+        WHERE platform=#{platform}
+        ORDER BY
+            id DESC
+            LIMIT 1
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+BARE changelog
+=================
+Version:BARE-1.0.0_build20220411
+    *feature: AcFun去水印
+    *feature: Before避风去水印
+    *feature: 逗拍去水印
+    *feature: 抖音去水印
+    *feature: 度小视去水印
+    *feature: 抖音火山版去水印
+    *feature: 快手去水印
+    *feature: 美拍去水印
+    *feature: 秒拍去水印
+    *feature: 微博去水印
+    *feature: 微视去水印
+    *feature: 西瓜视频去水印
+    *feature: 新片场去水印
+    *feature: 最右去水印
+    *feature: 绿州去水印
+    *feature: 开眼去水印
+    *feature: 陌陌去水印
+    *feature: 小红书去水印

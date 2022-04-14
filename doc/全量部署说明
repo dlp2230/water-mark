@@ -1,0 +1,13 @@
+1.在服务器网站根目录下新间bare目录
+2.把所有文件上传到bare目录下
+3.导入sql目录下base.sql到数据库中
+4.把bare/src/main/resources根目录下的 application.yml 中 port,datasource 根据实际情况修改
+5.windows下打包成jar包
+  5.1.cd 到项目安装目录
+   执行命令: mvn clean package -Ptest -Dmaven.test.skip=true
+  5.2.启动方式
+   以java命令启动jar包(具体根据对应的jar名称启动)
+   windows下执行命令
+   java -jar target\water-mark-1.0.0.jar
+   linux下执行命令
+   nohup java -jar target\water-mark-1.0.0.jar >/var/log/water-mark-jar.log &
